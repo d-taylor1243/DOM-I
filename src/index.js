@@ -70,3 +70,12 @@ for (let i = 0; i < mainContentText.length; i++) {
   }
 }
 
+let contactElems = document.getElementsByClassName("contact")[0].children;
+let contactContent = Object.values(siteContent.contact);
+for (let i = 0; i < contactContent.length; i++) {
+  contactElems[i].textContent = contactContent[i];
+}
+
+let footerElems = document.getElementsByTagName("footer")[0].children;
+footerElems[0].textContent = Object.values(siteContent.footer)[0];
+footerElems[0].classList.add('bold');
