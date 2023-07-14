@@ -38,6 +38,9 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
-const siteNav = document.getElementsByTagName('nav');
-const sample = "sample";
-console.log('project wired!')
+let siteNavElements = document.getElementsByTagName('nav')[0].childNodes;
+let navElemLables = Object.values(siteContent.nav);
+for (let i = 0; i < navElemLables.length; i++)
+ {  
+  siteNavElements[i*2+1].textContent = navElemLables[i];
+}
