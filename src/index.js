@@ -43,4 +43,5 @@ let navElemLables = Object.values(siteContent.nav);
 for (let i = 0; i < navElemLables.length; i++)
  {  
   siteNavElements[i*2+1].textContent = navElemLables[i];
+  siteNavElements[i*2+1].setAttribute('class', 'italic');
 }
