@@ -45,3 +45,28 @@ for (let i = 0; i < navElemLables.length; i++)
   siteNavElements[i*2+1].textContent = navElemLables[i];
   siteNavElements[i*2+1].setAttribute('class', 'italic');
 }
+
+document.getElementById('logo-img').setAttribute('src', "http://localhost:9000/img/logo.png");
+document.getElementById('cta-img').setAttribute('src', "http://localhost:9000/img/cta.png");
+document.getElementById('middle-img').setAttribute('src', "http://localhost:9000/img/accent.png");
+
+let ctaTextElements = document.querySelector('.cta-text').children;
+let ctaTextElementLables = Object.values(siteContent.cta);
+for (let i = 0; i < ctaTextElementLables.length; i++) {
+  ctaTextElements[i].textContent = ctaTextElementLables[i];
+}
+
+let mainContentElems = document.querySelectorAll(".main-content .text-content") // makes [5divs], those 5 divs have children who then have the text-content I want to manipulate
+mainContentElems = Array.from(mainContentElems);
+let mainContentText = Object.values(siteContent["main-content"]);
+let j = 0;
+let k = 0;
+for (let i = 0; i < mainContentText.length; i++) {
+  mainContentElems[j].children[k].textContent = mainContentText[i];
+  k++;
+  if (k >= mainContentElems[j].children.length) {
+    k = 0;
+    j++;
+  }
+}
+
